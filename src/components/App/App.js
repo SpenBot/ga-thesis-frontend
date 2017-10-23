@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import Chat from '../Chat/Chat.js'
 import Board from '../Board/Board.js'
 import UserInput from '../UserInput/UserInput.js'
+import PlayersDisplay from '../PlayersDisplay/PlayersDisplay.js'
+
+
+
+
+
 import './App.css'
 
 
@@ -15,7 +21,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: null
+      users: null
     }
     this.setUser = this.setUser.bind(this)
   }
