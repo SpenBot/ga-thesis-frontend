@@ -9,7 +9,9 @@ class App extends Component {
     super(props)
     this.state = {
       initMessages: [],
-      messages: []
+      messages: [],
+      username: null,
+      status: null
     }
     this.submitMessage = this.submitMessage.bind(this)
   }
@@ -19,27 +21,36 @@ class App extends Component {
       this.setState({messages: this.state.initMessages.concat(msgs)})
     })
 
-    socket.on('chat message', (msg) => {
+    socket.on('chat message', (msg, usn) => {
       this.setState({messages: this.state.messages.concat(msg)})
+      this.setState({username: this.state.username = usn})
     })
+
   }
 
   submitMessage (e) {
     e.preventDefault()
     let msg = document.getElementById('message').value
-    socket.emit('chat message', msg)
+    let usn = document.getElementById('username').value
+    socket.emit('chat message', msg, usn)
     document.getElementById('message').value = ''
+    document.getElementById('username').value = ''
   }
 
   render () {
     let initMessages = this.state.initMessages.map((message) => (<li>{message}</li>))
     let messages = this.state.messages.map((message) => (<li>{message}</li>))
+    let username = <li>{this.state.username}</li>
     return (
       <div>
-        <ul id='messages'>{initMessages}</ul>
+        <div id="status"></div>
+        <ul id='intiMessages'>{initMessages}</ul>
         <ul id='messages'>{messages}</ul>
+        <ul id='username_disp'>{username}</ul>
         <form action='' onSubmit={this.submitMessage}>
-          <input id='message' /><button>Send</button>
+          <input id='message' placeholder="enter message"/>
+          <input id="username" placeholder="enter username"/>
+          <button>Send</button>
         </form>
       </div>
     )
