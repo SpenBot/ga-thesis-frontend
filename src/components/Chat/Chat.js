@@ -42,7 +42,7 @@ class Chat extends Component {
         <ul id='messages'>{messages}</ul>
 
         <form action='' onSubmit={this.submitMessage}>
-          <input id='message' autocomplete='off' placeholder="enter message"/>
+          <input id='message' autoComplete='off' placeholder="enter message"/>
           <button>Send</button>
         </form>
 

@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   border: 10px solid red;
-  width: 500px;
+  width: 230px;
 }
 
 #UserInputFeild {
   margin: 0 auto;
   margin-top: 10px;
-  width: 200px;
+  width: 180px;
   height: 30px;
   font-size: 18px;
 }

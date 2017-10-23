@@ -11,7 +11,7 @@ class Board extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: this.props.user,
+      users: this.props.users,
       health: 10,
       attack: 3,
       heal: 2
