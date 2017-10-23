@@ -1,60 +1,58 @@
 import React, { Component } from 'react'
-import openSocket from 'socket.io-client'
+
+import Chat from '../Chat/Chat.js'
+import Board from '../Board/Board.js'
+import UserInput from '../UserInput/UserInput.js'
 import './App.css'
 
-const socket = openSocket('http://localhost:4000')
+
+
+
+
 
 class App extends Component {
-  constructor (props) {
+
+  constructor(props) {
     super(props)
     this.state = {
-      initMessages: [],
-      messages: [],
-      username: null,
-      status: null
+      user: null
     }
-    this.submitMessage = this.submitMessage.bind(this)
+    this.setUser = this.setUser.bind(this)
   }
 
-  componentDidMount () {
-    socket.on('initial messages', (msgs) => {
-      this.setState({messages: this.state.initMessages.concat(msgs)})
-    })
 
-    socket.on('chat message', (msg, usn) => {
-      this.setState({messages: this.state.messages.concat(msg)})
-      this.setState({username: this.state.username = usn})
-    })
 
+
+  setUser(user) {
+   this.setState({user: user})
+   console.log(`User from App = ${this.state.user}`)
   }
 
-  submitMessage (e) {
-    e.preventDefault()
-    let msg = document.getElementById('message').value
-    let usn = document.getElementById('username').value
-    socket.emit('chat message', msg, usn)
-    document.getElementById('message').value = ''
-    document.getElementById('username').value = ''
-  }
+
 
   render () {
-    let initMessages = this.state.initMessages.map((message) => (<li>{message}</li>))
-    let messages = this.state.messages.map((message) => (<li>{message}</li>))
-    let username = <li>{this.state.username}</li>
+
+    let signInBlock = null
+
+    if(this.state.user) {
+      signInBlock = null
+    } else {
+      signInBlock = <UserInput setUser={this.setUser}/>
+    }
+
     return (
-      <div>
-        <div id="status"></div>
-        <ul id='intiMessages'>{initMessages}</ul>
-        <ul id='messages'>{messages}</ul>
-        <ul id='username_disp'>{username}</ul>
-        <form action='' onSubmit={this.submitMessage}>
-          <input id='message' placeholder="enter message"/>
-          <input id="username" placeholder="enter username"/>
-          <button>Send</button>
-        </form>
+      <div className='App'>
+
+        {signInBlock}
+        <Board user={this.state.user}/>
+        <Chat user={this.state.user}/>
       </div>
     )
   }
+
 }
+
+
+
 
 export default App

@@ -1,0 +1,58 @@
+.BoardDiv {
+  margin: 0 auto;
+  margin-top: 5px;
+  border: 10px solid blue;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.BoardDiv h4{
+  margin: 0;
+  padding: 0;
+}
+
+
+.healthBlock {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  background-color: blue;
+  color: white;
+  margin: 10px;
+}
+
+
+
+p {
+  background: blue;
+  color: white;
+}
+
+.attackBlock {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  background-color: red;
+  color: white;
+  margin: 10px;
+}
+
+.attackBlock:hover {
+  cursor: pointer;
+}
+
+
+.healBlock {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  background-color: green;
+  color: white;
+  margin: 10px;
+}
+
+.healBlock:hover {
+  cursor: pointer;
+}
