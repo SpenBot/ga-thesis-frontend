@@ -8,12 +8,17 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      initMessages: [],
       messages: []
     }
     this.submitMessage = this.submitMessage.bind(this)
   }
 
   componentDidMount () {
+    socket.on('initial messages', (msgs) => {
+      this.setState({messages: this.state.initMessages.concat(msgs)})
+    })
+
     socket.on('chat message', (msg) => {
       this.setState({messages: this.state.messages.concat(msg)})
     })
@@ -27,9 +32,11 @@ class App extends Component {
   }
 
   render () {
+    let initMessages = this.state.initMessages.map((message) => (<li>{message}</li>))
     let messages = this.state.messages.map((message) => (<li>{message}</li>))
     return (
       <div>
+        <ul id='messages'>{initMessages}</ul>
         <ul id='messages'>{messages}</ul>
         <form action='' onSubmit={this.submitMessage}>
           <input id='message' /><button>Send</button>
