@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import openSocket from 'socket.io-client'
 
 import './UserInput.css'
 
+const socket = openSocket('http://localhost:4000')
 
 
 
@@ -17,11 +19,11 @@ class UserInput extends Component {
 
   handleChange(e) {
     e.preventDefault()
-    // let user = e.target.value
+
     let user = document.getElementById('UserInputFeild').value
-    this.props.setUsers(user)
-    // console.log(`handle change user = ${user}`)
-    // console.log(`handle change e = ${e}`)
+    // this.props.setUsers(user)
+
+    socket.emit('new user', user)
 
     document.getElementById('UserInputFeild').value = ''
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import openSocket from 'socket.io-client'
 
 import Chat from '../Chat/Chat.js'
 import Board from '../Board/Board.js'
@@ -6,6 +7,10 @@ import UserInput from '../UserInput/UserInput.js'
 import PlayersDisplay from '../PlayersDisplay/PlayersDisplay.js'
 
 import './App.css'
+
+const socket = openSocket('http://localhost:4000')
+
+
 
 
 
@@ -22,6 +27,13 @@ class App extends Component {
     this.setUsers = this.setUsers.bind(this)
   }
 
+
+
+  componentDidMount () {
+    socket.on('new user', (user) => {
+      this.setState({users: [...this.state.users, user]})
+    })
+  }
 
 
 
