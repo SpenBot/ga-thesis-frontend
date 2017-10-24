@@ -1,38 +1,39 @@
 .ChatDiv {
   margin: 0 auto;
-  margin-top: 10px;
-  /*width: 500px;
-  height: 250px;*/
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
-  /*border: 10px solid rgb(180, 180, 180);*/
-  /*border: 10px solid rgb(148, 87, 54);*/
-  border: 10px solid rgb(143, 228, 159);
-  border-radius: 20px;
-
   width: 280px;
   height: 450px;
-
-
+  box-shadow: 5px 5px 20px rgb(160, 160, 160);
 }
+
+.ChatDiv h2{
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(143, 228, 159);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  width: 260px;
+}
+
+
 
 #messages {
   font-family: Verdana, sans-serif;
   margin: 0 auto;
   background-color: rgb(240, 240, 240);
-  /*width: 400px;*/
-  width: 220px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   border: 2px solid rgb(220, 220, 220);
   list-style-type: none;
   text-align: left;
   overflow: auto;
-
-  /*display:flex;
-  flex-direction:column-reverse;*/
-
+  margin-top: -10px;
 }
 
 /*#messages li:nth-child(odd) {
@@ -48,14 +49,16 @@ form {
 
 form input {
   margin: 0 auto;
-  width: 260px;
+  width: 240px;
   height: 40px;
   font-size: 18px;
+  /*padding-left: 5px;*/
 }
 
 form button {
   margin: 0 auto;
   margin-top: 10px;
+  margin-bottom: 20px;
   width: 200px;
   height: 30px;
 }

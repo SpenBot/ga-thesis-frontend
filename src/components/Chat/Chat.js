@@ -40,6 +40,8 @@ class Chat extends Component {
     return (
       <div className='ChatDiv'>
 
+        <h2>CHAT</h2>
+
         <ul id='messages'>{messages}</ul>
 
         <form action='' onSubmit={this.submitMessage}>

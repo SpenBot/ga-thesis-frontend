@@ -114,7 +114,7 @@ class LogInPage extends Component {
       player1ReadyBlock = null
       player1LogBlock =
       <div className='P1Log-In'>
-        <h3>PLAYER 1 SIGN IN</h3>
+        <h3>PLAYER 1</h3>
 
         <form onSubmit={(e) => this.handleLogInP1(e)}>
           <input id='Player1SignIn' autoComplete='off' placeholder="enter username"/>
@@ -135,7 +135,7 @@ class LogInPage extends Component {
       player2ReadyBlock = null
       player2LogBlock =
       <div className='P2Log-In'>
-        <h3>PLAYER 2 SIGN IN</h3>
+        <h3>PLAYER 2</h3>
 
         <form onSubmit={(e) => this.handleLogInP2(e)}>
           <input id='Player2SignIn' autoComplete='off' placeholder="enter username"/>
@@ -162,7 +162,7 @@ class LogInPage extends Component {
 
 
         <div className='LogInBlocks'>
-
+          <h2>ENTER PLAYERS</h2>
           {player1LogBlock}
           {player1ReadyBlock}
           {player2LogBlock}
