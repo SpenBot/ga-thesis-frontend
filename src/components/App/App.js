@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import openSocket from 'socket.io-client'
 
-import Chat from '../Chat/Chat.js'
-import Board from '../Board/Board.js'
-import UserInput from '../UserInput/UserInput.js'
-import PlayersDisplay from '../PlayersDisplay/PlayersDisplay.js'
+import LogInPage from '../LogInPage/LogInPage.js'
+import GamePage from '../GamePage/GamePage.js'
+// import Chat from '../Chat/Chat.js'
+// import Board from '../Board/Board.js'
+// import PlayersDisplay from '../PlayersDisplay/PlayersDisplay.js'
 
 import './App.css'
 
@@ -22,29 +23,40 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      users: []
+      player1: null,
+      player2: null
     }
-    this.setUsers = this.setUsers.bind(this)
+    // this.setPlayer1 = this.setPlayer1.bind(this)
+    // this.setPlayer2 = this.setPlayer2.bind(this)
   }
 
 
 
   componentDidMount () {
-    socket.on('new user', (user) => {
-      this.setState({users: [...this.state.users, user]})
+    socket.on('new player1', (player1) => {
+      this.setState({player1: player1})
+          console.log(`App Player 1 state = ${this.state.player1}`)
+    })
+    socket.on('new player2', (player2) => {
+      this.setState({player2: player2})
+          console.log(`App Player 2 state = ${this.state.player2}`)
     })
   }
 
 
 
-  setUsers(user) {
-    if(this.state.users.length === 0) {
-      this.setState({users: this.state.users.push(user)})
-    } else {
-      this.setState({users: [...this.state.users, user]})
-    }
-      console.log(`Users from App = ${this.state.users}`)
-  }
+  // setPlayer1(player1) {
+  //     this.setState({player1})
+  //     console.log(`Player1 from App = ${this.state.player1}`)
+  // }
+  //
+  // setPlayer2(player2) {
+  //     this.setState({player2})
+  //     console.log(`Player2 from App = ${this.state.player2}`)
+  // }
+
+
+
 
 
 
@@ -52,29 +64,42 @@ class App extends Component {
 
   render () {
 
-    // let signInBlock = null
-    //
-    // if(this.state.users) {
-    //   signInBlock = null
-    // } else {
-    //   signInBlock = <UserInput setUsers={this.setUsers}/>
-    // }
+    let LogIn = null
+    let GameWindow = null
+
+    if (this.state.user === 2) {
+      LogIn = null
+      GameWindow = <GamePage users={this.state.user}
+        setPlayer1={this.setPlayer1}
+        setPlayer2={this.setPlayer2}
+      />
+    } else {
+      LogIn = <LogInPage users={this.state.users}/>
+    }
+
+
 
     return (
       <div className='App'>
 
-        {/* {signInBlock} */}
-        <div className='UserInfo'>
-          <UserInput setUsers={this.setUsers}/>
+        {LogIn}
+        {GameWindow}
+
+
+        {/* <div className='UserInfo'>
           <PlayersDisplay users={this.state.users}/>
         </div>
         <Board users={this.state.users}/>
-        <Chat users={this.state.users}/>
+        <Chat users={this.state.users}/> */}
+
+
+
       </div>
     )
   }
 
 }
+
 
 
 

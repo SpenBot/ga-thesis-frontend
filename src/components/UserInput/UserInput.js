@@ -21,7 +21,6 @@ class UserInput extends Component {
     e.preventDefault()
 
     let user = document.getElementById('UserInputFeild').value
-    // this.props.setUsers(user)
 
     socket.emit('new user', user)
 
@@ -33,7 +32,6 @@ class UserInput extends Component {
     return (
       <div className='UserInputDiv'>
 
-        {/* <form action='' onSubmit={this.handleChange.bind(this)}> */}
         <form onSubmit={(e) => this.handleChange(e)}>
           <input id='UserInputFeild' autoComplete='off' placeholder="enter username"/>
           <button type="submit">Enter</button>

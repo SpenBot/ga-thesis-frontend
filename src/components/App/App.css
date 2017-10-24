@@ -1,11 +1,24 @@
 .App {
-  margin: 0 auto;
+  /*margin: 0 auto;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;*/
+  margin-top: 30px;
+  /*background-color: green;*/
 }
 
-.UserInfo {
+body {
+  /*background-color: rgb(255, 234, 119);*/
+  /*background-color: rgb(255, 231, 147);*/
+  /*background-color: rgb(255, 240, 183);*/
+  /*background-color: rgb(255, 233, 131);*/
+  /*background-color: rgb(255, 236, 120);*/
+  background-color: rgb(255, 244, 158);
+}
+
+
+
+/*.UserInfo {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -13,4 +26,4 @@
   height: 120px;
   font-size: 18px;
   border: 10px solid orange;
-}
+}*/

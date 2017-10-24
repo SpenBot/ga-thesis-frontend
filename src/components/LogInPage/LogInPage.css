@@ -1,0 +1,111 @@
+.LogInPageDiv {
+    margin: 0 auto;
+    height: 500px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    /*background-color: white;*/
+    text-align: center;
+    justify-content: space-around;
+}
+
+
+
+
+
+.LogInLogo {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 20px;
+  color: rgb(186, 111, 80);
+  padding-top: 50px;
+  /*background-color: yellow;*/
+}
+
+.LogInLogo h1 {
+  /*font-family: 'Oxygen', sans-serif;*/
+  font-family: Verdana;
+  font-size: 50px;
+  font-weight: bolder;
+  /*color: rgb(255, 109, 106);*/
+  color: rgb(255, 90, 84);
+  margin-top: 0;
+}
+
+.LogInLogo h2 {
+  /*font-family: 'Oxygen', sans-serif;*/
+  font-family: Verdana;
+  font-size: 24px;
+  color: rgb(186, 111, 80);
+  margin-top: -30px;
+}
+
+
+
+
+.LogInBlocks {
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  /*background-color: white;*/
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.P1Log-In {
+  margin: 0 auto;
+  border: 5px solid rgb(255, 90, 84);
+  background-color: white;
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.P1Log-In h3 {
+  font-family: Verdana;
+  color: rgb(255, 90, 84);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.P2Log-In {
+  margin: 0 auto;
+  border: 5px solid rgb(81, 120, 194);
+  background-color: white;
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.P2Log-In h3 {
+  font-family: Verdana;
+  color: rgb(81, 120, 194);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+
+.LogInBlocks form {
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+}
+
+.LogInBlocks input {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 180px;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.LogInBlocks button {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+}
