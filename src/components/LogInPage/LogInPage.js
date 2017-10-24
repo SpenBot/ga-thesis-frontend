@@ -54,17 +54,32 @@ class LogInPage extends Component {
       this.setState({player1LogCheck: this.props.player1})
       console.log(`P1 State LoginCheck = ${this.state.player1LogCheck}`)
 
+      this.setState({player2LogCheck: this.props.player2})
+      console.log(`P2 State LoginCheck = ${this.state.player2LogCheck}`)
+
       let player1 = this.state.player1LogCheck
       socket.emit('login player1', player1)
       console.log(`Emitting player1`)
+
+
+      let player2 = this.state.player2LogCheck
+      socket.emit('login player2', player2)
+      console.log(`Emitting player2`)
   }
+
+
 
 
   componentDidMount () {
     socket.on('login player1', (player1) => {
       this.setState({player1LogCheck: player1})
       console.log(`P1 State LoginCheck 2 = ${this.state.player1LogCheck}`)
-    })  
+    })
+
+    socket.on('login player2', (player2) => {
+      this.setState({player2LogCheck: player2})
+      console.log(`P2 State LoginCheck 2 = ${this.state.player2LogCheck}`)
+    })
   }
 
 
