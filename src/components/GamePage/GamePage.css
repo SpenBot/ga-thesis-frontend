@@ -1,0 +1,17 @@
+
+.GamePageDiv {
+  /*border: 10px solid rgb(110, 65, 47);*/
+  /*border: 10px solid rgb(148, 87, 54);*/
+  /*border-radius: 20px;*/
+  height: 520px;
+  width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  /*background-color: rgb(255, 245, 215);*/
+  /*box-shadow: 5px 5px 20px rgb(90, 90, 90);*/
+
+
+  display: flex;
+  flex-direction: row
+
+}

@@ -14,7 +14,8 @@
 
 
 .LogInLogo {
-  font-family: 'Oxygen', sans-serif;
+  /*font-family: 'Oxygen', sans-serif;*/
+  font-family: Verdana, sans-serif;
   font-size: 20px;
   color: rgb(186, 111, 80);
   padding-top: 50px;
@@ -23,7 +24,7 @@
 
 .LogInLogo h1 {
   /*font-family: 'Oxygen', sans-serif;*/
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   font-size: 50px;
   font-weight: bolder;
   /*color: rgb(255, 109, 106);*/
@@ -33,7 +34,7 @@
 
 .LogInLogo h2 {
   /*font-family: 'Oxygen', sans-serif;*/
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   font-size: 24px;
   color: rgb(186, 111, 80);
   margin-top: -30px;
@@ -62,7 +63,7 @@
 }
 
 .P1Log-In h3 {
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   color: rgb(255, 90, 84);
   font-size: 20px;
   margin-bottom: 10px;
@@ -78,7 +79,7 @@
 }
 
 .P2Log-In h3 {
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   color: rgb(81, 120, 194);
   font-size: 20px;
   margin-bottom: 10px;
@@ -124,7 +125,7 @@
 }
 
 .P1Ready h3 {
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   color: rgb(255, 90, 84);
   font-size: 20px;
   margin-bottom: 10px;
@@ -141,7 +142,7 @@
 }
 
 .P2Ready h3 {
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   color: rgb(81, 120, 194);
   font-size: 20px;
   margin-bottom: 10px;

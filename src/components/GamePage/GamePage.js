@@ -28,8 +28,8 @@ class GamePage extends Component {
 
     return (
       <div className="GamePageDiv">
-        <Chat player1={this.state.player1} player2={this.state.player2} />
         <Board player1={this.state.player1} player2={this.state.player2} />
+        <Chat player1={this.state.player1} player2={this.state.player2} />
       </div>
     )
   }
