@@ -109,3 +109,41 @@
   width: 100px;
   height: 30px;
 }
+
+
+
+
+
+.P1Ready{
+  margin: 0 auto;
+  border: 5px solid rgb(255, 90, 84);
+  background-color: white;
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.P1Ready h3 {
+  font-family: Verdana;
+  color: rgb(255, 90, 84);
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding-top: 40px;
+}
+
+.P2Ready{
+  margin: 0 auto;
+  border: 5px solid rgb(81, 120, 194);
+  background-color: white;
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.P2Ready h3 {
+  font-family: Verdana;
+  color: rgb(81, 120, 194);
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding-top: 40px;
+}

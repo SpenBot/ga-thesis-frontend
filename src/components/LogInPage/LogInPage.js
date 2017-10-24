@@ -94,23 +94,26 @@ class LogInPage extends Component {
 
 
 
-
-
-
-
-
-
 /////////////// RENDER ///////////////////////////////////////
 //////////////////////////////////////////////////////////////
 
   render () {
 
     let player1LogBlock = null
+    let player1ReadyBlock = null
+
     let player2LogBlock = null
+    let player2ReadyBlock = null
+
 
     if(this.state.player1LogCheck) {
       player1LogBlock = null
+      player1ReadyBlock =
+        <div className='P1Ready'>
+          <h3>PLAYER 1 READY</h3>
+        </div>
     } else {
+      player1ReadyBlock = null
       player1LogBlock =
       <div className='P1Log-In'>
         <h3>PLAYER 1 SIGN IN</h3>
@@ -122,9 +125,16 @@ class LogInPage extends Component {
       </div>
     }
 
+
+
     if(this.state.player2LogCheck) {
       player2LogBlock = null
+      player2ReadyBlock =
+        <div className='P2Ready'>
+          <h3>PLAYER 2 READY</h3>
+        </div>
     } else {
+      player2ReadyBlock = null
       player2LogBlock =
       <div className='P2Log-In'>
         <h3>PLAYER 2 SIGN IN</h3>
@@ -155,7 +165,9 @@ class LogInPage extends Component {
         <div className='LogInBlocks'>
 
           {player1LogBlock}
+          {player1ReadyBlock}
           {player2LogBlock}
+          {player2ReadyBlock}
 
         </div>
 
