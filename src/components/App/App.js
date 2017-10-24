@@ -3,9 +3,6 @@ import openSocket from 'socket.io-client'
 
 import LogInPage from '../LogInPage/LogInPage.js'
 import GamePage from '../GamePage/GamePage.js'
-// import Chat from '../Chat/Chat.js'
-// import Board from '../Board/Board.js'
-// import PlayersDisplay from '../PlayersDisplay/PlayersDisplay.js'
 
 import './App.css'
 
@@ -26,8 +23,6 @@ class App extends Component {
       player1: null,
       player2: null
     }
-    // this.setPlayer1 = this.setPlayer1.bind(this)
-    // this.setPlayer2 = this.setPlayer2.bind(this)
   }
 
 
@@ -45,54 +40,36 @@ class App extends Component {
 
 
 
-  // setPlayer1(player1) {
-  //     this.setState({player1})
-  //     console.log(`Player1 from App = ${this.state.player1}`)
-  // }
-  //
-  // setPlayer2(player2) {
-  //     this.setState({player2})
-  //     console.log(`Player2 from App = ${this.state.player2}`)
-  // }
 
 
 
-
-
-
-
+/////////////// RENDER ///////////////////////////////////////
+//////////////////////////////////////////////////////////////
 
   render () {
 
     let LogIn = null
     let GameWindow = null
 
-    if (this.state.user === 2) {
+    if (this.state.player1 && this.state.player2) {
       LogIn = null
-      GameWindow = <GamePage users={this.state.user}
-        setPlayer1={this.setPlayer1}
-        setPlayer2={this.setPlayer2}
+      GameWindow = <GamePage
+        player1={this.state.player1}
+        player2={this.state.player2}
       />
     } else {
       LogIn = <LogInPage users={this.state.users}/>
     }
 
 
+/////////////// RETURN ///////////////////////////////////////
+//////////////////////////////////////////////////////////////
 
     return (
       <div className='App'>
 
         {LogIn}
         {GameWindow}
-
-
-        {/* <div className='UserInfo'>
-          <PlayersDisplay users={this.state.users}/>
-        </div>
-        <Board users={this.state.users}/>
-        <Chat users={this.state.users}/> */}
-
-
 
       </div>
     )
