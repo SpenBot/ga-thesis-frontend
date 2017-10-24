@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import openSocket from 'socket.io-client'
 
 import Chat from '../Chat/Chat.js'
 import Board from '../Board/Board.js'
 
 import './GamePage.css'
 
-
-const socket = openSocket('http://localhost:4000')
 
 
 

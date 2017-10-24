@@ -58,7 +58,10 @@ class App extends Component {
         player2={this.state.player2}
       />
     } else {
-      LogIn = <LogInPage users={this.state.users}/>
+      LogIn = <LogInPage
+        player1={this.state.player1}
+        player2={this.state.player2}
+      />
     }
 
 

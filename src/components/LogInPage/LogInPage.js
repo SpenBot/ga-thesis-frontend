@@ -32,7 +32,6 @@ class LogInPage extends Component {
     e.preventDefault()
     let player1 = document.getElementById('Player1SignIn').value
     this.setState({player1LogCheck: player1})
-        console.log(`Player 1 Log Check Post = ${this.state.player1LogCheck}`)
     socket.emit('new player1', player1)
   }
 
@@ -41,7 +40,6 @@ class LogInPage extends Component {
     e.preventDefault()
     let player2 = document.getElementById('Player2SignIn').value
     this.setState({player2LogCheck: player2})
-        console.log(`Player 2 Log Check Post = ${this.state.player2LogCheck}`)
     socket.emit('new player2', player2)
   }
 
@@ -51,20 +49,21 @@ class LogInPage extends Component {
 
 
   componentWillReceiveProps () {
-      this.setState({player1LogCheck: this.props.player1})
-      console.log(`P1 State LoginCheck = ${this.state.player1LogCheck}`)
+      console.log(`Props P1 = ${this.state.player1LogCheck}`)
+      console.log(`Props P2 = ${this.state.player2LogCheck}`)
 
+      this.setState({player1LogCheck: this.props.player1})
       this.setState({player2LogCheck: this.props.player2})
-      console.log(`P2 State LoginCheck = ${this.state.player2LogCheck}`)
+
+      console.log(`ComponentWillRecieve P1 = ${this.state.player1LogCheck}`)
+      console.log(`ComponentWillRecieve P2 = ${this.state.player2LogCheck}`)
+
 
       let player1 = this.state.player1LogCheck
       socket.emit('login player1', player1)
-      console.log(`Emitting player1`)
-
 
       let player2 = this.state.player2LogCheck
       socket.emit('login player2', player2)
-      console.log(`Emitting player2`)
   }
 
 
@@ -73,12 +72,11 @@ class LogInPage extends Component {
   componentDidMount () {
     socket.on('login player1', (player1) => {
       this.setState({player1LogCheck: player1})
-      console.log(`P1 State LoginCheck 2 = ${this.state.player1LogCheck}`)
     })
-
+    console.log(`ComponentDidMount P1 = ${this.state.player1LogCheck}`)
+    console.log(`ComponentDidMount P2 = ${this.state.player2LogCheck}`)
     socket.on('login player2', (player2) => {
       this.setState({player2LogCheck: player2})
-      console.log(`P2 State LoginCheck 2 = ${this.state.player2LogCheck}`)
     })
   }
 
