@@ -8,6 +8,8 @@ const socket = openSocket('http://localhost:4000')
 
 
 
+
+
 /////////////// COMPONENT ////////////////////////////////////
 //////////////////////////////////////////////////////////////
 
@@ -42,6 +44,42 @@ class LogInPage extends Component {
         console.log(`Player 2 Log Check Post = ${this.state.player2LogCheck}`)
     socket.emit('new player2', player2)
   }
+
+
+
+
+
+
+  componentWillReceiveProps () {
+      this.setState({player1LogCheck: this.props.player1})
+      console.log(`P1 State LoginCheck = ${this.state.player1LogCheck}`)
+
+      let player1 = this.state.player1LogCheck
+      socket.emit('login player1', player1)
+      console.log(`Emitting player1`)
+  }
+
+
+  componentDidMount () {
+    socket.on('login player1', (player1) => {
+      this.setState({player1LogCheck: player1})
+      console.log(`P1 State LoginCheck 2 = ${this.state.player1LogCheck}`)
+    })  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,8 +123,7 @@ class LogInPage extends Component {
 
 
 
-/////////////// RETURN ///////////////////////////////////////
-//////////////////////////////////////////////////////////////
+
 
     return (
       <div className='LogInPageDiv'>
@@ -106,6 +143,8 @@ class LogInPage extends Component {
           {player2LogBlock}
 
         </div>
+
+
 
       </div>
     )
