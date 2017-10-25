@@ -1,0 +1,41 @@
+.BoardBottomDiv {
+  border: 2px solid rgb(220, 220, 220);
+  height: 200px;
+  width: 440px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.BoardBottomDiv h3{
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(120, 120, 120);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  width: 420px;
+}
+
+.CardStack {
+  display: flex;
+  flex-direction: row;
+  /*padding: 30px;*/
+  justify-content: space-around;
+}
+
+.GameCard {
+  border: 2px solid rgb(220, 220, 220);
+  height: 100px;
+  width: 60px;
+  margin-top: 25px;
+  /*padding-top: 30px;*/
+}
+
+.GameCard:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 20px rgb(160, 160, 160);
+  height: 110px;
+  width: 66px;
+}

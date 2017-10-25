@@ -1,0 +1,71 @@
+.BoardTopDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.BoardTopDiv p {
+  font-family: Verdana, sans-serif;
+  padding-left: 5px;
+  margin: 0;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+.Player1InfoDiv {
+  border: 2px solid rgb(220, 220, 220);
+  width: 90px;
+}
+
+.Player1InfoDiv h3 {
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(255, 120, 111);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  width: 70px;
+}
+
+.Player2InfoDiv {
+  border: 2px solid rgb(220, 220, 220);
+  width: 90px;
+}
+
+.Player2InfoDiv h3 {
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(96, 132, 194);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  width: 70px;
+}
+
+.ArenaDiv {
+  /*margin-top: 20px;*/
+  border: 2px solid rgb(220, 220, 220);
+  height: 160px;
+  width: 220px;
+  background-image: url('./GA_Thesis_Arena_1.1.png')
+}
+
+.ArenaDiv img{
+  margin-top: 50px;
+}
+
+#monkey1{
+  margin-left: 15px;
+}
+
+#monkey2{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+    margin-left: 75px;
+}

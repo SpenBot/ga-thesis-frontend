@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import openSocket from 'socket.io-client'
+
+import BoardTop from '../BoardTop/BoardTop.js'
+import BoardBottom from '../BoardBottom/BoardBottom.js'
+
 import './Board.css'
 
 const socket = openSocket('http://localhost:4000')
@@ -11,43 +15,44 @@ class Board extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      users: this.props.users,
+      player1: this.props.player1,
+      player1: this.props.player2,
       health: 10,
       attack: 3,
       heal: 2
     }
-    this.attackHealth = this.attackHealth.bind(this)
-    this.healHealth = this.healHealth.bind(this)
+    // this.attackHealth = this.attackHealth.bind(this)
+    // this.healHealth = this.healHealth.bind(this)
   }
 
 
 
 
-  componentDidMount () {
-
-    socket.on('attacked health', (hp) => {
-      this.setState({health: hp})
-    })
-
-    socket.on('healed health', (hp) => {
-      this.setState({health: hp})
-    })
-
-  }
-
-
+  // componentDidMount () {
+  //
+  //   socket.on('attacked health', (hp) => {
+  //     this.setState({health: hp})
+  //   })
+  //
+  //   socket.on('healed health', (hp) => {
+  //     this.setState({health: hp})
+  //   })
+  //
+  // }
 
 
 
-  attackHealth() {
-    let hp = this.state.health - this.state.attack
-    socket.emit('attacked health', hp)
-  }
 
-  healHealth() {
-    let hp = this.state.health + this.state.heal
-    socket.emit('healed health', hp)
-  }
+
+  // attackHealth() {
+  //   let hp = this.state.health - this.state.attack
+  //   socket.emit('attacked health', hp)
+  // }
+  //
+  // healHealth() {
+  //   let hp = this.state.health + this.state.heal
+  //   socket.emit('healed health', hp)
+  // }
 
 
 
@@ -59,9 +64,15 @@ class Board extends Component {
 
       <div className='BoardDiv'>
 
-        <p>{this.props.user}</p>
+        <h2>MONKEY STACK</h2>
 
-        <div className='healthBlock'>
+        <BoardTop />
+        <BoardBottom />
+
+
+
+
+        {/* <div className='healthBlock'>
           <h4>{this.state.health}</h4>
         </div>
 
@@ -71,7 +82,7 @@ class Board extends Component {
 
         <div className='healBlock' onClick={this.healHealth}>
           <h4>{this.state.heal}</h4>
-        </div>
+        </div> */}
 
       </div>
 

@@ -1,14 +1,42 @@
 .BoardDiv {
   margin: 0 auto;
-  margin-top: 5px;
-  border: 10px solid blue;
-  width: 340px;
-  height: 200px;
+  width: 460px;
+  height: 450px;
+  background-color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  box-shadow: 5px 5px 20px rgb(160, 160, 160);
+  /*margin-left: 40px;*/
 }
 
-.BoardDiv h4{
+.BoardDiv h2{
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(143, 228, 159);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  width: 440px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.BoardDiv h4{
   margin: 0;
   padding: 0;
 }
@@ -21,13 +49,6 @@
   background-color: blue;
   color: white;
   margin: 10px;
-}
-
-
-
-p {
-  background: blue;
-  color: white;
 }
 
 .attackBlock {
@@ -55,4 +76,4 @@ p {
 
 .healBlock:hover {
   cursor: pointer;
-}
+}*/
