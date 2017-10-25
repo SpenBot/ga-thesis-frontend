@@ -17,22 +17,43 @@ class Board extends Component {
     this.state = {
       player1: this.props.player1,
       player2: this.props.player2,
-      health: 10,
-      attack: 3,
-      heal: 2
+      turn: 1,
+      p1HP: 30,
+      p1C: 30,
+      p1OP: 10,
+      p2HP: 30,
+      p2C: 30,
+      p2OP: 10,
     }
-    // this.attackHealth = this.attackHealth.bind(this)
-    // this.healHealth = this.healHealth.bind(this)
+    this.changeTurn = this.changeTurn.bind(this)
   }
 
 
   componentDidMount () {
-    document.getElementById('battle-music').play()
+    // document.getElementById('battle-music').play()
+
+
+//////////////////////////////////////////////////////
+    // socket.on('new Turn', (newTurn) => {
+    //   this.setState( {turn: newTurn})
+    // })
+/////////////////////////////////////////////////////
+
+
   }
 
   componentWillUnmount() {
-    document.getElementById('battle-music').pause()
+    // document.getElementById('battle-music').pause()
   }
+
+  changeTurn(turn) {
+   this.setState( {turn: turn +1 } )
+   console.log(`APP New Turn State = ${this.state.turn}`)
+  }
+
+
+
+
 
   // componentDidMount () {
   //
@@ -72,8 +93,21 @@ class Board extends Component {
 
         <h2>MONKEY STACK</h2>
 
-        <BoardTop player1={this.state.player1} player2={this.state.player2} />
-        <BoardBottom player1={this.state.player1} player2={this.state.player2} />
+        <BoardTop
+          player1={this.state.player1}
+          player2={this.state.player2}
+
+
+        />
+        <BoardBottom
+          player1={this.state.player1}
+          player2={this.state.player2}
+          turn={this.state.turn}
+          changeTurn={this.changeTurn}
+        />
+
+
+
 
 
 

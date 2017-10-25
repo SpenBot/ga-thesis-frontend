@@ -44,7 +44,8 @@ class LogInPage extends Component {
 
 
   componentDidMount () {
-    document.getElementById('intro-music').play()
+    // document.getElementById('intro-music').play()
+
     socket.on('new player1', (player1) => {
       this.setState({player1LogCheck: player1})
       document.getElementById('bing').play()
@@ -59,7 +60,7 @@ class LogInPage extends Component {
 
 
 componentWillUnmount() {
-      document.getElementById('intro-music').pause()
+      // document.getElementById('intro-music').pause()
 }
 
 
