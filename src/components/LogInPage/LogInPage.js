@@ -45,14 +45,15 @@ class LogInPage extends Component {
 
   componentDidMount () {
     document.getElementById('intro-music').play()
-
     socket.on('new player1', (player1) => {
       this.setState({player1LogCheck: player1})
-          console.log(`LOGIN P1 State = ${this.state.player1LogCheck}`)
+      document.getElementById('bing').play()
+      console.log(`LOGIN P1 State = ${this.state.player1LogCheck}`)
     })
     socket.on('new player2', (player2) => {
       this.setState({player2LogCheck: player2})
-          console.log(`LOGIN P2 State = ${this.state.player2LogCheck}`)
+      document.getElementById('bing').play()
+      console.log(`LOGIN P2 State = ${this.state.player2LogCheck}`)
     })
   }
 

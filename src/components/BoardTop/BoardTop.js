@@ -11,13 +11,14 @@ class BoardTop extends Component {
 
       <div className="BoardTopDiv">
 
-
         <div className="Player1InfoDiv">
           <h3>P1</h3>
           <p id='usr1'>{this.props.player1}</p>
-          <img src="./heart-100.png" alt="heart"/>
-          <img src="./coin-100.png" alt="coin"/>
-          <img src="./heart-100.png" alt="gem"/>
+          <div className="stats">
+            <img id="heart" src="./heart-100.png" height="20px" width="20px" alt="coin"/>
+            <img id="coin" src="./coin-100.png" height="20px" width="20px" alt="coin"/>
+            <img id="gem" src="./gem-100.png" height="20px" width="20px" alt="gem"/>
+          </div>
         </div>
 
 
@@ -30,9 +31,11 @@ class BoardTop extends Component {
         <div className="Player2InfoDiv">
           <h3>P2</h3>
           <p id='usr2'>{this.props.player2}</p>
-          <p>HP</p>
-          <p>$$</p>
-          <p>OP</p>
+          <div className="stats">
+            <img id="heart" src="./heart-100.png" height="20px" width="20px" alt="coin"/>
+            <img id="coin" src="./coin-100.png" height="20px" width="20px" alt="coin"/>
+            <img id="gem" src="./gem-100.png" height="20px" width="20px" alt="gem"/>
+          </div>
         </div>
 
 

@@ -85,3 +85,25 @@
   transform: scaleX(-1);
     margin-left: 75px;
 }
+
+
+
+
+
+.stats{
+  display: flex;
+  flex-direction: column;
+}
+
+#heart{
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+#coin{
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+#gem{
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
