@@ -26,6 +26,7 @@ class App extends Component {
 
 /////////////// SOCKET LISTEN ///////////////////////////////////////
   componentDidMount () {
+
     socket.on('new player1', (player1) => {
       this.setState({player1: player1})
           console.log(`APP P1 State = ${this.state.player1}`)
@@ -57,13 +58,22 @@ class App extends Component {
     }
 
 
+
 /////////////// RETURN ////////////////////////////////////////
 
     return (
       <div className='App'>
 
+        <div className='wrapperTop'>
+          <div className="sliding-background"></div>
+        </div>
+
         {LogInPageComp}
         {GamePageComp}
+
+        <div className='wrapperBottom'>
+          <div className="sliding-background"></div>
+        </div>
 
       </div>
     )

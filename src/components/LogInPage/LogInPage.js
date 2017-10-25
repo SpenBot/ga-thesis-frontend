@@ -44,6 +44,9 @@ class LogInPage extends Component {
 
 
   componentDidMount () {
+
+    document.getElementById('intro-music').play()
+
     socket.on('new player1', (player1) => {
       this.setState({player1LogCheck: player1})
           console.log(`LOGIN P1 State = ${this.state.player1LogCheck}`)
@@ -55,7 +58,9 @@ class LogInPage extends Component {
   }
 
 
-
+componentWillUnmount() {
+      document.getElementById('intro-music').pause()
+}
 
 
 
@@ -119,6 +124,7 @@ class LogInPage extends Component {
 //////////////////////////////////////////////////////////////
 
     return (
+
       <div className='LogInPageDiv'>
 
 
@@ -136,12 +142,14 @@ class LogInPage extends Component {
           {player1ReadyBlock}
           {player2LogBlock}
           {player2ReadyBlock}
-
         </div>
 
 
 
+
       </div>
+
+
     )
   }
 

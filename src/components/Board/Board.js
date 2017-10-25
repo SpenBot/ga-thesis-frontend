@@ -26,7 +26,13 @@ class Board extends Component {
   }
 
 
+  componentDidMount () {
+    document.getElementById('battle-music').play()
+  }
 
+  componentWillUnmount() {
+    document.getElementById('battle-music').pause()
+  }
 
   // componentDidMount () {
   //

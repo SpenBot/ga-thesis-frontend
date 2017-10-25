@@ -1,10 +1,5 @@
 .App {
-  /*margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: row;*/
-  margin-top: 30px;
-  /*background-color: green;*/
+  margin-top: 20px;
 }
 
 body {
@@ -17,14 +12,29 @@ body {
   background-color: rgb(255, 250, 189);
 }
 
+.wrapperTop {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
 
+.wrapperBottom {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
 
-/*.UserInfo {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  width: 500px;
-  height: 120px;
-  font-size: 18px;
-  border: 10px solid orange;
-}*/
+.sliding-background {
+  opacity: .5;
+  background: url("./banana.png") repeat-x;
+  height: 20px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
