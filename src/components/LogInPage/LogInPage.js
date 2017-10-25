@@ -8,8 +8,6 @@ const socket = openSocket('http://localhost:4000')
 
 
 
-
-
 /////////////// COMPONENT ////////////////////////////////////
 //////////////////////////////////////////////////////////////
 
@@ -18,8 +16,8 @@ class LogInPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      player1LogCheck: this.props.player1,
-      player2LogCheck: this.props.player2
+      player1LogCheck: null,
+      player2LogCheck: null
     }
     this.handleLogInP1 = this.handleLogInP1.bind(this)
     this.handleLogInP2 = this.handleLogInP2.bind(this)
@@ -27,19 +25,17 @@ class LogInPage extends Component {
 
 
 
-//sets user input to player 1 state, then emits to socket //
+
+
   handleLogInP1(e) {
     e.preventDefault()
     let player1 = document.getElementById('Player1SignIn').value
-    this.setState({player1LogCheck: player1})
     socket.emit('new player1', player1)
   }
 
-//sets user input to  player 2 state, then emits to socket //
   handleLogInP2(e) {
     e.preventDefault()
     let player2 = document.getElementById('Player2SignIn').value
-    this.setState({player2LogCheck: player2})
     socket.emit('new player2', player2)
   }
 
@@ -47,43 +43,16 @@ class LogInPage extends Component {
 
 
 
-
-  componentWillReceiveProps () {
-      console.log(`Props P1 = ${this.state.player1LogCheck}`)
-      console.log(`Props P2 = ${this.state.player2LogCheck}`)
-
-      this.setState({player1LogCheck: this.props.player1})
-      this.setState({player2LogCheck: this.props.player2})
-
-      console.log(`ComponentWillRecieve P1 = ${this.state.player1LogCheck}`)
-      console.log(`ComponentWillRecieve P2 = ${this.state.player2LogCheck}`)
-
-
-      let player1 = this.state.player1LogCheck
-      socket.emit('login player1', player1)
-
-      let player2 = this.state.player2LogCheck
-      socket.emit('login player2', player2)
-  }
-
-
-
-
   componentDidMount () {
-    socket.on('login player1', (player1) => {
+    socket.on('new player1', (player1) => {
       this.setState({player1LogCheck: player1})
+          console.log(`LOGIN P1 State = ${this.state.player1LogCheck}`)
     })
-    console.log(`ComponentDidMount P1 = ${this.state.player1LogCheck}`)
-    console.log(`ComponentDidMount P2 = ${this.state.player2LogCheck}`)
-    socket.on('login player2', (player2) => {
+    socket.on('new player2', (player2) => {
       this.setState({player2LogCheck: player2})
+          console.log(`LOGIN P2 State = ${this.state.player2LogCheck}`)
     })
   }
-
-
-
-
-
 
 
 

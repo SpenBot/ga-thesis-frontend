@@ -10,10 +10,8 @@ const socket = openSocket('http://localhost:4000')
 
 
 
-
-
-
-
+/////////////// COMPONENT ////////////////////////////////////
+//////////////////////////////////////////////////////////////
 
 class App extends Component {
 
@@ -26,25 +24,21 @@ class App extends Component {
   }
 
 
-
+/////////////// SOCKET LISTEN ///////////////////////////////////////
   componentDidMount () {
     socket.on('new player1', (player1) => {
       this.setState({player1: player1})
-          console.log(`App Player 1 state = ${this.state.player1}`)
+          console.log(`APP P1 State = ${this.state.player1}`)
     })
     socket.on('new player2', (player2) => {
       this.setState({player2: player2})
-          console.log(`App Player 2 state = ${this.state.player2}`)
+          console.log(`APP P2 State = ${this.state.player2}`)
     })
   }
 
 
 
-
-
-
 /////////////// RENDER ///////////////////////////////////////
-//////////////////////////////////////////////////////////////
 
   render () {
 
@@ -59,14 +53,13 @@ class App extends Component {
       />
     } else {
       LogIn = <LogInPage
-        player1={this.state.player1}
-        player2={this.state.player2}
+        // player1={this.state.player1}
+        // player2={this.state.player2}
       />
     }
 
 
-/////////////// RETURN ///////////////////////////////////////
-//////////////////////////////////////////////////////////////
+/////////////// RETURN ////////////////////////////////////////
 
     return (
       <div className='App'>
@@ -76,10 +69,11 @@ class App extends Component {
 
       </div>
     )
+
+  //render
   }
-
+// component
 }
-
 
 
 
