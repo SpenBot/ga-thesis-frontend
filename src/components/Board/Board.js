@@ -29,26 +29,42 @@ class Board extends Component {
   }
 
 
+
   componentDidMount () {
-    // document.getElementById('battle-music').play()
+    document.getElementById('battle-music').play()
+
+    socket.on('new Turn', (newTurn) => {
+      this.setState( {turn: newTurn})
+
+    })
 
 
-//////////////////////////////////////////////////////
-    // socket.on('new Turn', (newTurn) => {
-    //   this.setState( {turn: newTurn})
-    // })
-/////////////////////////////////////////////////////
+    socket.on('new P1 HP', (newP1Health) => {
+      this.setState( {p1HP: newP1Health})
+      document.getElementById('damage').play()
+    })
+
+    socket.on('new P2 HP', (newP2Health) => {
+      this.setState( {p2HP: newP2Health})
+      document.getElementById('damage').play()
+    })
+
 
 
   }
 
+
+
+
   componentWillUnmount() {
-    // document.getElementById('battle-music').pause()
+    document.getElementById('battle-music').pause()
   }
 
   changeTurn(turn) {
-   this.setState( {turn: turn +1 } )
-   console.log(`APP New Turn State = ${this.state.turn}`)
+
+  //  this.setState( {turn: turn +1 } )
+  //  console.log(`APP New Turn State = ${this.state.turn}`)
+
   }
 
 
@@ -96,14 +112,24 @@ class Board extends Component {
         <BoardTop
           player1={this.state.player1}
           player2={this.state.player2}
-
-
+          p1HP={this.state.p1HP}
+          p1C={this.state.p1C}
+          p1OP={this.state.p1OP}
+          p2HP={this.state.p2HP}
+          p2C={this.state.p2C}
+          p2OP={this.state.p2OP}
         />
+
         <BoardBottom
           player1={this.state.player1}
           player2={this.state.player2}
           turn={this.state.turn}
-          changeTurn={this.changeTurn}
+          p1HP={this.state.p1HP}
+          p1C={this.state.p1C}
+          p1OP={this.state.p1OP}
+          p2HP={this.state.p2HP}
+          p2C={this.state.p2C}
+          p2OP={this.state.p2OP}
         />
 
 
