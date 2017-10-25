@@ -15,9 +15,9 @@ class BoardTop extends Component {
         <div className="Player1InfoDiv">
           <h3>P1</h3>
           <p id='usr1'>{this.props.player1}</p>
-          <p>HP</p>
-          <p>$$</p>
-          <p>OP</p>
+          <img src="./heart-100.png" alt="heart"/>
+          <img src="./coin-100.png" alt="coin"/>
+          <img src="./heart-100.png" alt="gem"/>
         </div>
 
 

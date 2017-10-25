@@ -36,6 +36,7 @@
 .GameCard:hover {
   cursor: pointer;
   box-shadow: 5px 5px 20px rgb(160, 160, 160);
-  height: 110px;
-  width: 66px;
+  height: 130px;
+  width: 78px;
+  margin-top: 12px;
 }
