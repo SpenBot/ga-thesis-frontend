@@ -12,8 +12,9 @@ class BoardBottom extends Component {
         <div className="BoardBottomDiv">
 
           <h3>PLAYER TURN</h3>
-          
+
           <div className="CardStack">
+            <div className="GameCard"></div>
             <div className="GameCard"></div>
             <div className="GameCard"></div>
             <div className="GameCard"></div>

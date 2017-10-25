@@ -1,8 +1,0 @@
-.PlayersDisplayDiv {
-  margin: 0 auto;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: column;
-  border: 10px solid green;
-  width: 230px;
-}

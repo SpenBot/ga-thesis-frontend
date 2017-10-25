@@ -16,7 +16,7 @@ class Board extends Component {
     super(props)
     this.state = {
       player1: this.props.player1,
-      player1: this.props.player2,
+      player2: this.props.player2,
       health: 10,
       attack: 3,
       heal: 2
@@ -66,8 +66,8 @@ class Board extends Component {
 
         <h2>MONKEY STACK</h2>
 
-        <BoardTop />
-        <BoardBottom />
+        <BoardTop player1={this.state.player1} player2={this.state.player2} />
+        <BoardBottom player1={this.state.player1} player2={this.state.player2} />
 
 
 

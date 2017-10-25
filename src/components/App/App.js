@@ -42,19 +42,17 @@ class App extends Component {
 
   render () {
 
-    let LogIn = null
-    let GameWindow = null
+    let LogInPageComp = null
+    let GamePageComp = null
 
     if (this.state.player1 && this.state.player2) {
-      LogIn = null
-      GameWindow = <GamePage
+      LogInPageComp = null
+      GamePageComp = <GamePage
         player1={this.state.player1}
         player2={this.state.player2}
       />
     } else {
-      LogIn = <LogInPage
-        // player1={this.state.player1}
-        // player2={this.state.player2}
+      LogInPageComp = <LogInPage
       />
     }
 
@@ -64,8 +62,8 @@ class App extends Component {
     return (
       <div className='App'>
 
-        {LogIn}
-        {GameWindow}
+        {LogInPageComp}
+        {GamePageComp}
 
       </div>
     )

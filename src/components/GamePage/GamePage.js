@@ -13,13 +13,13 @@ import './GamePage.css'
 
 class GamePage extends Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      player1: this.props.player1,
-      player2: this.props.player2
-    }
-  }
+  // constructor (props) {
+  //   super(props)
+  //   this.state = {
+  //     player1: this.props.player1,
+  //     player2: this.props.player2
+  //   }
+  // }
 
 
 
@@ -28,8 +28,8 @@ class GamePage extends Component {
 
     return (
       <div className="GamePageDiv">
-        <Board player1={this.state.player1} player2={this.state.player2} />
-        <Chat player1={this.state.player1} player2={this.state.player2} />
+        <Board player1={this.props.player1} player2={this.props.player2} />
+        <Chat player1={this.props.player1} player2={this.props.player2} />
       </div>
     )
   }

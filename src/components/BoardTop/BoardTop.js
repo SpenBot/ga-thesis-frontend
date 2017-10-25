@@ -14,7 +14,7 @@ class BoardTop extends Component {
 
         <div className="Player1InfoDiv">
           <h3>P1</h3>
-          <p>USERNAME</p>
+          <p id='usr1'>{this.props.player1}</p>
           <p>HP</p>
           <p>$$</p>
           <p>OP</p>
@@ -29,7 +29,7 @@ class BoardTop extends Component {
 
         <div className="Player2InfoDiv">
           <h3>P2</h3>
-          <p>USERNAME</p>
+          <p id='usr2'>{this.props.player2}</p>
           <p>HP</p>
           <p>$$</p>
           <p>OP</p>
