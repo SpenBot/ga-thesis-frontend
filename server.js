@@ -7,7 +7,7 @@ const http = require('http')
 const socketIO = require('socket.io')
 const server = http.createServer(app)
 const io = socketIO.listen(server)
-server.listen(3001, () => {
+server.listen(4000, () => {
     console.log("\n\tServer active. Listening on port 3001\n")
 })
 

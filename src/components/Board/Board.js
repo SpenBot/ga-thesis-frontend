@@ -6,7 +6,7 @@ import BoardBottom from '../BoardBottom/BoardBottom.js'
 
 import './Board.css'
 
-const socket = openSocket('http://localhost:3001')
+const socket = openSocket('http://localhost:4000')
 
 
 

@@ -3,7 +3,7 @@ import openSocket from 'socket.io-client'
 
 import './Chat.css'
 
-const socket = openSocket('http://localhost:3001')
+const socket = openSocket('http://localhost:4000')
 
 
 
