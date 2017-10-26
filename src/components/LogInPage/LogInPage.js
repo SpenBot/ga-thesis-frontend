@@ -3,7 +3,7 @@ import openSocket from 'socket.io-client'
 
 import './LogInPage.css'
 
-const socket = openSocket('http://localhost:4000')
+const socket = openSocket('http://localhost:3001')
 
 
 
