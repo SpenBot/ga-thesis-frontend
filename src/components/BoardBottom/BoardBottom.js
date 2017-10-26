@@ -65,12 +65,12 @@ class BoardBottom extends Component {
         playerTurn = <h3 id="P2Turn">* PLAYER 2 TURN *</h3>
       }
 
-      let audio = document.getElementById("select")
-      let card = document.getElementById("Slap")
-
-      card.mouseenter(function() {
-        audio.play();
-      })
+      // let audio = document.getElementById("select")
+      // let card = document.getElementById("Slap")
+      //
+      // card.mouseenter(function() {
+      //   audio.play();
+      // })
 
 
       return(
