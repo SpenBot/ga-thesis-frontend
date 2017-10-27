@@ -6,7 +6,7 @@ import GamePage from '../GamePage/GamePage.js'
 
 import './App.css'
 
-const socket = openSocket('http://localhost:4000')
+const socket = openSocket('https://monkeystack-back.herokuapp.com/')
 
 
 

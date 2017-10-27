@@ -11,7 +11,7 @@ import BoardBottom from '../BoardBottom/BoardBottom.js'
 
 import './Board.css'
 
-const socket = openSocket('http://localhost:4000')
+const socket = openSocket('https://monkeystack-back.herokuapp.com/')
 
 
 
@@ -44,10 +44,11 @@ class Board extends Component {
     if (this.state.p1HP <= 0 || this.state.p2HP <= 0) {
       document.getElementById('battle-music').pause()
       document.getElementById('death').play()
+      setTimeout(() => { alert("Thanks for playing!") }, 800)
     }
   }
 
-    
+
 
 /////////////// SOCKET LISTEN ///////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
@@ -67,8 +68,6 @@ class Board extends Component {
           document.getElementById('bingsound').play()
         }, 700)
 
-        this.winCheck()
-
       })
 
 /////////////// UPDATE FOR SLAP ////////////////////////////////////
@@ -78,6 +77,7 @@ class Board extends Component {
       this.setState( {p1C: slapP1Coin} )
       this.setState( {p1OP: slapP1OP} )
       document.getElementById('slapsound').play()
+      this.winCheck()
     })
 
     socket.on('P2 slaps', (slapP1Health, slapP2Coin, slapP2OP) => {
@@ -85,6 +85,7 @@ class Board extends Component {
       this.setState( {p2C: slapP2Coin} )
       this.setState( {p2OP: slapP2OP} )
       document.getElementById('slapsound').play()
+      this.winCheck()
     })
 
 /////////////// UPDATE FOR PUNCH ////////////////////////////////////
@@ -94,6 +95,7 @@ class Board extends Component {
       this.setState( {p1C: punchP1Coin} )
       this.setState( {p1OP: punchP1OP} )
       document.getElementById('punchsound').play()
+      this.winCheck()
     })
 
     socket.on('P2 punches', (punchP1Health, punchP2Coin, punchP2OP) => {
@@ -101,6 +103,7 @@ class Board extends Component {
       this.setState( {p2C: punchP2Coin} )
       this.setState( {p2OP: punchP2OP} )
       document.getElementById('punchsound').play()
+      this.winCheck()
     })
 
 /////////////// UPDATE FOR MUD ////////////////////////////////////
@@ -110,6 +113,7 @@ class Board extends Component {
       this.setState( {p1C: mudP1Coin} )
       this.setState( {p1OP: mudP1OP} )
       document.getElementById('mudsound').play()
+      this.winCheck()
     })
 
     socket.on('P2 muds', (mudP1Health, mudP2Coin, mudP2OP) => {
@@ -117,6 +121,7 @@ class Board extends Component {
       this.setState( {p2C: mudP2Coin} )
       this.setState( {p2OP: mudP2OP} )
       document.getElementById('mudsound').play()
+      this.winCheck()
     })
 
 /////////////// UPDATE FOR OVERFLOW ////////////////////////////////////

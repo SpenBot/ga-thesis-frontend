@@ -7,7 +7,7 @@ import openSocket from 'socket.io-client'
 
 import './BoardBottom.css'
 
-const socket = openSocket('http://localhost:4000')
+const socket = openSocket('https://monkeystack-back.herokuapp.com/')
 
 
 
@@ -44,10 +44,10 @@ class BoardBottom extends Component {
     let newP2OP = 0
 
     if(this.state.turn % 2 !== 0) {
-      newP2Coin = 13
+      newP2Coin = 12
       newP2OP = 7
     } else {
-      newP1Coin = 13
+      newP1Coin = 12
       newP1OP = 7
     }
 
@@ -134,13 +134,13 @@ class BoardBottom extends Component {
 /////////////// OVERFLOW ///////////////////////////////////////
   handleOverflow() {
 
-    //// SET COIN ////
-    if ( this.state.turn % 2 !== 0 && (this.props.p1OP - 15) >= 0 ) {
+    //// SET OVERFLOW ////
+    if ( this.state.turn % 2 !== 0 && (this.props.p1C - 15) >= 0 ) {
       this.completeTurn()
       let overflowP1OP = this.props.p1OP + 15
       let overflowP1Coin = this.props.p1C - 15
       socket.emit('P1 overflows', overflowP1Coin, overflowP1OP)
-    } else if ( this.state.turn % 2 === 0 && (this.props.p2OP - 15) >= 0 ) {
+    } else if ( this.state.turn % 2 === 0 && (this.props.p2C - 15) >= 0 ) {
       this.completeTurn()
       let overflowP2OP = this.props.p2OP + 15
       let overflowP2Coin = this.props.p2C - 15
