@@ -34,22 +34,26 @@ class Board extends Component {
       p2C: 25,
       p2OP: 15,
     }
+    this.winCheck = this.winCheck.bind(this)
   }
 
 
 
+
+  winCheck () {
+    if (this.state.p1HP <= 0 || this.state.p2HP <= 0) {
+      document.getElementById('battle-music').pause()
+      document.getElementById('death').play()
+    }
+  }
+
+    
 
 /////////////// SOCKET LISTEN ///////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
   componentDidMount () {
     document.getElementById('battle-music').play()
-
-    // if (this.state.p1HP <= 0 || this.state.p2HP <= 0) {
-    //   document.getElementById('battle-music').pause()
-    //   document.getElementById('death').play()
-    // }
-
 
 /////////////// TURN ////////////////////////////////////////////////
     socket.on('new Turn', (newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP) => {
@@ -62,6 +66,8 @@ class Board extends Component {
           this.setState( {p2OP: this.state.p2OP + newP2OP})
           document.getElementById('bingsound').play()
         }, 700)
+
+        this.winCheck()
 
       })
 
