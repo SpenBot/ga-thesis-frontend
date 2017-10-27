@@ -56,6 +56,10 @@ class Board extends Component {
 
         setTimeout(() => {
           this.setState( {turn: newTurn})
+          // this.setState( {p1C: this.state.p1C + newP1Coin})
+          // this.setState( {p1OP: this.state.p1C + newP1OP})
+          // this.setState( {p2C: this.state.p2C + newP2Coin})
+          // this.setState( {p2OP: this.state.p2C + newP2OP})
           document.getElementById('bingsound').play()
         }, 800)
 
