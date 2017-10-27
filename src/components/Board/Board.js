@@ -45,10 +45,23 @@ class Board extends Component {
   componentDidMount () {
     document.getElementById('battle-music').play()
 
+    // if (this.state.p1HP <= 0 || this.state.p2HP <= 0) {
+    //   document.getElementById('battle-music').pause()
+    //   document.getElementById('death').play()
+    // }
+
+
 /////////////// TURN ////////////////////////////////////////////////
     socket.on('new Turn', (newTurn) => {
-      this.setState( {turn: newTurn})
-    })
+
+        setTimeout(() => {
+          this.setState( {turn: newTurn})
+          document.getElementById('bingsound').play()
+        }, 800)
+
+      })
+
+
 
 /////////////// UPDATE FOR SLAP ////////////////////////////////////
 
