@@ -21,6 +21,7 @@ class Chat extends Component {
   componentDidMount () {
     socket.on('chat message', (msg) => {
       this.setState({messages: this.state.messages.concat(msg)})
+      document.getElementById('chatsound').play()
     })
 
   }

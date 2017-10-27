@@ -48,12 +48,12 @@ class LogInPage extends Component {
 
     socket.on('new player1', (player1) => {
       this.setState({player1LogCheck: player1})
-      document.getElementById('bing').play()
+      document.getElementById('bingsound').play()
       console.log(`LOGIN P1 State = ${this.state.player1LogCheck}`)
     })
     socket.on('new player2', (player2) => {
       this.setState({player2LogCheck: player2})
-      document.getElementById('bing').play()
+      document.getElementById('bingsound').play()
       console.log(`LOGIN P2 State = ${this.state.player2LogCheck}`)
     })
   }
