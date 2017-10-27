@@ -32,7 +32,6 @@ class BoardBottom extends Component {
 /////////////// UPDATE TURN ////////////////////////////////////////
   componentWillReceiveProps (newProps) {
     this.setState({turn: newProps.turn})
-    this.setState({p1HP: newProps.p1HP})
   }
 
 
@@ -58,8 +57,30 @@ class BoardBottom extends Component {
     }
 
     //// SET TURN ////
+    //
+    // let newP1Coin = 0
+    // let newP1OP = 0
+    // let newP2Coin = 0
+    // let newP2OP = 0
+    //
+    // if(this.state.turn % 2 !== 0) {
+    //   let newP2Coin = this.props.p2C + 10
+    //   let newP2OP = this.props.p2OP + 5
+    // } else {
+    //   let newP1Coin = this.props.p1C + 10
+    //   let newP1OP = this.props.p1OP + 5
+    // }
+    //
+    // let newTurn = this.state.turn + 1
+    // socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
+    //
+
+
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn')
+
+
   }
 
 
@@ -78,9 +99,28 @@ class BoardBottom extends Component {
       socket.emit('P2 punches', punchP1Health, punchP2Coin, punchP2OP)
     }
 
-    //// SET TURN ////
+    // //// SET TURN ////
+    //
+    // let newP1Coin = 0
+    // let newP1OP = 0
+    // let newP2Coin = 0
+    // let newP2OP = 0
+    //
+    // if(this.state.turn % 2 !== 0) {
+    //   let newP2Coin = this.props.p2C + 10
+    //   let newP2OP = this.props.p2OP + 5
+    // } else {
+    //   let newP1Coin = this.props.p1C + 10
+    //   let newP1OP = this.props.p1OP + 5
+    // }
+    //
+    // let newTurn = this.state.turn + 1
+    // socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
+
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn')
+
   }
 
 /////////////// MUD TOSS //////////////////////////////////////////
@@ -98,9 +138,29 @@ class BoardBottom extends Component {
       socket.emit('P2 muds', mudP1Health, mudP2Coin, mudP2OP)
     }
 
-    //// SET TURN ////
+    // //// SET TURN ////
+    //
+    // let newP1Coin = 0
+    // let newP1OP = 0
+    // let newP2Coin = 0
+    // let newP2OP = 0
+    //
+    // if(this.state.turn % 2 !== 0) {
+    //   let newP2Coin = this.props.p2C + 10
+    //   let newP2OP = this.props.p2OP + 5
+    // } else {
+    //   let newP1Coin = this.props.p1C + 10
+    //   let newP1OP = this.props.p1OP + 5
+    // }
+    //
+    // let newTurn = this.state.turn + 1
+    // socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
+    //
+
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn')
+
   }
 
 /////////////// OVERFLOW ///////////////////////////////////////
@@ -116,9 +176,28 @@ class BoardBottom extends Component {
       socket.emit('P2 overflows', overflowP2Coin, overflowP2OP)
     }
 
-    //// SET TURN ////
+    // //// SET TURN ////
+    //
+    // let newP1Coin = 0
+    // let newP1OP = 0
+    // let newP2Coin = 0
+    // let newP2OP = 0
+    //
+    // if(this.state.turn % 2 !== 0) {
+    //   let newP2Coin = this.props.p2C + 10
+    //   let newP2OP = this.props.p2OP + 5
+    // } else {
+    //   let newP1Coin = this.props.p1C + 10
+    //   let newP1OP = this.props.p1OP + 5
+    // }
+    //
+    // let newTurn = this.state.turn + 1
+    // socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
+    //
+
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn')
   }
 
   /////////////// COIN RESTORE ///////////////////////////////////////
@@ -134,13 +213,29 @@ class BoardBottom extends Component {
         socket.emit('P2 coinrestore', coinrestoreP2Coin, coinrestoreP2OP)
       }
 
-      //// SET TURN ////
+      // //// SET TURN ////
+      //
+      // let newP1Coin = 0
+      // let newP1OP = 0
+      // let newP2Coin = 0
+      // let newP2OP = 0
+      //
+      // if(this.state.turn % 2 !== 0) {
+      //   let newP2Coin = this.props.p2C + 10
+      //   let newP2OP = this.props.p2OP + 5
+      // } else {
+      //   let newP1Coin = this.props.p1C + 10
+      //   let newP1OP = this.props.p1OP + 5
+      // }
+      //
+      // let newTurn = this.state.turn + 1
+      // socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
+      //
+
+
       let newTurn = this.state.turn + 1
-      socket.emit('new Turn', newTurn)
+      socket.emit('new Turn')
     }
-
-
-
 
 
 

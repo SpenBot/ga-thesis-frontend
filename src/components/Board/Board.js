@@ -34,7 +34,9 @@ class Board extends Component {
       p2C: 25,
       p2OP: 15,
     }
+      // this.setTurnAndRestores = this.setTurnAndRestores.bind(this)
   }
+
 
 
 
@@ -46,8 +48,28 @@ class Board extends Component {
     document.getElementById('battle-music').play()
 
 /////////////// TURN ////////////////////////////////////////////////
+    // socket.on('new Turn', (newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP) => {
     socket.on('new Turn', (newTurn) => {
+
+      // function setTurnAndRestores(newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP) {
+      //   this.setState( {turn: newTurn})
+      //   this.setState( {p1C: this.state.p1C + newP1Coin})
+      //   this.setState( {p1OP: this.state.p1C + newP1OP})
+      //   this.setState( {p2C: this.state.p1C + newP2Coin})
+      //   this.setState( {p2OP: this.state.p1C + newP2OP})
+      //   document.getElementById('selectsound').play()
+      // }
+      //
+      // setTimeout(setTurnAndRestores(), 1500)
+
       this.setState( {turn: newTurn})
+      // this.setState( {p1C: this.state.p1C + newP1Coin})
+      // this.setState( {p1OP: this.state.p1C + newP1OP})
+      // this.setState( {p2C: this.state.p2C + newP2Coin})
+      // this.setState( {p2OP: this.state.p2C + newP2OP})
+      // document.getElementById('selectsound').play()
+
+
     })
 
 /////////////// UPDATE FOR SLAP ////////////////////////////////////
