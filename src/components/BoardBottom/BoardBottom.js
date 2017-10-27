@@ -58,8 +58,21 @@ class BoardBottom extends Component {
     }
 
     //// SET TURN ////
+    let newP1Coin = 0
+    let newP1OP = 0
+    let newP2Coin = 0
+    let newP2OP = 0
+
+    if(this.state.turn % 2 !== 0) {
+      newP2Coin = 10
+      newP2OP = 5
+    } else {
+      newP1Coin = 10
+      newP1OP = 5
+    }
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
   }
 
 
@@ -79,8 +92,21 @@ class BoardBottom extends Component {
     }
 
     //// SET TURN ////
+    let newP1Coin = 0
+    let newP1OP = 0
+    let newP2Coin = 0
+    let newP2OP = 0
+
+    if(this.state.turn % 2 !== 0) {
+      newP2Coin = 10
+      newP2OP = 5
+    } else {
+      newP1Coin = 10
+      newP1OP = 5
+    }
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
   }
 
 /////////////// MUD TOSS //////////////////////////////////////////
@@ -99,8 +125,21 @@ class BoardBottom extends Component {
     }
 
     //// SET TURN ////
+    let newP1Coin = 0
+    let newP1OP = 0
+    let newP2Coin = 0
+    let newP2OP = 0
+
+    if(this.state.turn % 2 !== 0) {
+      newP2Coin = 10
+      newP2OP = 5
+    } else {
+      newP1Coin = 10
+      newP1OP = 5
+    }
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
   }
 
 /////////////// OVERFLOW ///////////////////////////////////////
@@ -117,8 +156,21 @@ class BoardBottom extends Component {
     }
 
     //// SET TURN ////
+    let newP1Coin = 0
+    let newP1OP = 0
+    let newP2Coin = 0
+    let newP2OP = 0
+
+    if(this.state.turn % 2 !== 0) {
+      newP2Coin = 10
+      newP2OP = 5
+    } else {
+      newP1Coin = 10
+      newP1OP = 5
+    }
+
     let newTurn = this.state.turn + 1
-    socket.emit('new Turn', newTurn)
+    socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
   }
 
   /////////////// COIN RESTORE ///////////////////////////////////////
@@ -135,8 +187,21 @@ class BoardBottom extends Component {
       }
 
       //// SET TURN ////
+      let newP1Coin = 0
+      let newP1OP = 0
+      let newP2Coin = 0
+      let newP2OP = 0
+
+      if(this.state.turn % 2 !== 0) {
+        newP2Coin = 10
+        newP2OP = 5
+      } else {
+        newP1Coin = 10
+        newP1OP = 5
+      }
+
       let newTurn = this.state.turn + 1
-      socket.emit('new Turn', newTurn)
+      socket.emit('new Turn', newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP)
     }
 
 

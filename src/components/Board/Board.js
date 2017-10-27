@@ -52,20 +52,18 @@ class Board extends Component {
 
 
 /////////////// TURN ////////////////////////////////////////////////
-    socket.on('new Turn', (newTurn) => {
+    socket.on('new Turn', (newTurn, newP1Coin, newP1OP, newP2Coin, newP2OP) => {
 
         setTimeout(() => {
           this.setState( {turn: newTurn})
-          // this.setState( {p1C: this.state.p1C + newP1Coin})
-          // this.setState( {p1OP: this.state.p1C + newP1OP})
-          // this.setState( {p2C: this.state.p2C + newP2Coin})
-          // this.setState( {p2OP: this.state.p2C + newP2OP})
+          this.setState( {p1C: this.state.p1C + newP1Coin})
+          this.setState( {p1OP: this.state.p1OP + newP1OP})
+          this.setState( {p2C: this.state.p2C + newP2Coin})
+          this.setState( {p2OP: this.state.p2OP + newP2OP})
           document.getElementById('bingsound').play()
-        }, 800)
+        }, 700)
 
       })
-
-
 
 /////////////// UPDATE FOR SLAP ////////////////////////////////////
 
