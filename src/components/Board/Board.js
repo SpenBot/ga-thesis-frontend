@@ -28,11 +28,11 @@ class Board extends Component {
       player2: this.props.player2,
       turn: 1,
       p1HP: 30,
-      p1C: 25,
-      p1OP: 15,
+      p1C: 10,
+      p1OP: 5,
       p2HP: 30,
-      p2C: 25,
-      p2OP: 15,
+      p2C: 10,
+      p2OP: 5,
     }
     this.winCheck = this.winCheck.bind(this)
   }
@@ -66,7 +66,7 @@ class Board extends Component {
           this.setState( {p2C: this.state.p2C + newP2Coin})
           this.setState( {p2OP: this.state.p2OP + newP2OP})
           document.getElementById('bingsound').play()
-        }, 700)
+        }, 600)
 
       })
 
