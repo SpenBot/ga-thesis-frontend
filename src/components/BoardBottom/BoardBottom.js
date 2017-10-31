@@ -92,13 +92,13 @@ class BoardBottom extends Component {
     //// SET STATS ////
     if ( this.state.turn % 2 !== 0 && (  (this.props.p1C - 8) >= 0 && (this.props.p1OP - 3) >= 0 ) ) {
       this.completeTurn()
-      let punchP2Health = this.props.p2HP - 7
+      let punchP2Health = this.props.p2HP - 6
       let punchP1Coin = this.props.p1C - 8
       let punchP1OP = this.props.p1OP - 3
       socket.emit('P1 punches', punchP2Health, punchP1Coin, punchP1OP)
     } else if ( this.state.turn % 2 === 0 && (  (this.props.p2C - 8) >= 0 && (this.props.p2OP - 3) >= 0 ) ) {
       this.completeTurn()
-      let punchP1Health = this.state.p1HP - 7
+      let punchP1Health = this.state.p1HP - 6
       let punchP2Coin = this.props.p2C - 8
       let punchP2OP = this.props.p2OP - 3
       socket.emit('P2 punches', punchP1Health, punchP2Coin, punchP2OP)
@@ -116,13 +116,13 @@ class BoardBottom extends Component {
     //// SET STATS ////
     if ( this.state.turn % 2 !== 0 && (  (this.props.p1C - 10) >= 0 && (this.props.p1OP - 5) >= 0 ) ) {
       this.completeTurn()
-      let mudP2Health = this.props.p2HP - 12
+      let mudP2Health = this.props.p2HP - 10
       let mudP1Coin = this.props.p1C - 10
       let mudP1OP = this.props.p1OP - 5
       socket.emit('P1 muds', mudP2Health, mudP1Coin, mudP1OP)
     } else if ( this.state.turn % 2 === 0 && (  (this.props.p2C - 10) >= 0 && (this.props.p2OP - 5) >= 0 ) ) {
       this.completeTurn()
-      let mudP1Health = this.state.p1HP - 12
+      let mudP1Health = this.state.p1HP - 10
       let mudP2Coin = this.props.p2C - 10
       let mudP2OP = this.props.p2OP - 5
       socket.emit('P2 muds', mudP1Health, mudP2Coin, mudP2OP)
@@ -140,12 +140,12 @@ class BoardBottom extends Component {
     //// SET OVERFLOW ////
     if ( this.state.turn % 2 !== 0  &&  ((this.props.p1C - 5) >= 0) ) {
       this.completeTurn()
-      let overflowP1OP = this.props.p1OP + 2
+      let overflowP1OP = this.props.p1OP + 3
       let overflowP1Coin = this.props.p1C - 5
       socket.emit('P1 overflows', overflowP1Coin, overflowP1OP)
     } else if ( this.state.turn % 2 === 0  &&  ((this.props.p2C - 5) >= 0) ) {
       this.completeTurn()
-      let overflowP2OP = this.props.p2OP + 2
+      let overflowP2OP = this.props.p2OP + 3
       let overflowP2Coin = this.props.p2C - 5
       socket.emit('P2 overflows', overflowP2Coin, overflowP2OP)
     } else {
@@ -210,23 +210,23 @@ class BoardBottom extends Component {
 
           <div className="CardStack">
             <img
-              src="./Card-1.7.png" className="GameCard" id="Slap" alt="slap"
+              src="./Card-1-v8.png" className="GameCard" id="Slap" alt="slap"
               onClick={this.handleSlap.bind(this)}
             />
             <img
-              src="./Card-2.7.png" className="GameCard" id="Pound" alt="pound"
+              src="./Card-2-v9.png" className="GameCard" id="Pound" alt="pound"
               onClick={this.handlePunch.bind(this)}
             />
             <img
-              src="./Card-4.6.png" className="GameCard" id="Overflow" alt="overflow"
+              src="./Card-4-v8.png" className="GameCard" id="Overflow" alt="overflow"
               onClick={this.handleCoinrestore.bind(this)}
             />
             <img
-              src="./Card-3.6.png" className="GameCard" id="Cash" alt="cash"
+              src="./Card-3-v9.png" className="GameCard" id="Cash" alt="cash"
               onClick={this.handleOverflow.bind(this)}
             />
             <img
-              src="./Card-5.4.png" className="GameCard" id="Mud" alt="mud"
+              src="./Card-5-v9.png" className="GameCard" id="Mud" alt="mud"
               onClick={this.handleMud.bind(this)}
             />
           </div>
