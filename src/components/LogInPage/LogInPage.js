@@ -44,6 +44,7 @@ class LogInPage extends Component {
 
 
   componentDidMount () {
+
     document.getElementById('intro-music').play()
 
     socket.on('new player1', (player1) => {
@@ -134,7 +135,7 @@ componentWillUnmount() {
           <h1>MONKEY STACK</h1>
           <h2>a 2 player online monkey game</h2>
           <h4>[send this URL to a buddy and start playing!]</h4>
-          <p>music/sounds only works on Chrome and Firefox</p>
+          {/* <p>music/sounds only works on Chrome and Firefox</p> */}
         </div>
 
 

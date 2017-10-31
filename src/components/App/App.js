@@ -27,6 +27,14 @@ class App extends Component {
 /////////////// SOCKET LISTEN ///////////////////////////////////////
   componentDidMount () {
 
+    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0)
+    {
+      alert("This game runs best on Chrome and Firefox!\n\nFor music and sounds on Safari, please select: \n\n\tSafari  >  Settings for this Website \n\tAuto-Play:  Allow all Auto-Play\n\nEnjoy!")
+    }
+
+
+
+
     socket.on('new player1', (player1) => {
       this.setState({player1: player1})
           console.log(`APP P1 State = ${this.state.player1}`)
